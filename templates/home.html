@@ -58,7 +58,19 @@
       <div
         style="position: absolute; top: 19px; right: 220px; font-weight: 500"
       >
-        Login
+        {% if user.is_authenticated %}
+
+            <a style="
+          color: #000;
+          text-decoration: none;
+        " href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+
+            <a style="
+          color: #000;
+          text-decoration: none;
+        " href="{% url 'login' %}">Log In</a>
+        {% endif %}
       </div>
         <div
         style="position: absolute; top: 19px; right: 100px; font-weight: 500"
@@ -150,14 +162,8 @@
           width: 255px;
         "
       >
-        {% if user.is_authenticated %}
-            Hi {{ user.username }}!
-            <p><a href="{% url 'logout' %}">Log Out</a></p>
-        {% else %}
-            <p>You are not logged in</p>
-            <a href="{% url 'login' %}">Log In</a>
-        {% endif %}
-{#        с инвалидностью по всему миру#}
+
+        с инвалидностью по всему миру
       </div>
       <img
         style="
