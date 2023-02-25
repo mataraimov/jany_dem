@@ -18,13 +18,14 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
-
-from apps.users.views import MainView
+from apps.users.views import MainView, user_logout, LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/post/', include('apps.users.urls')),
-    path('',MainView.as_view(),name='home')
+    path('',MainView.as_view(),name='home'),
+    path('login', LoginView.as_view(), name='login'),
+    path('logout', user_logout, name='logout'),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

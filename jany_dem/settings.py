@@ -34,7 +34,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
 ]
 # Application definition
-
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
