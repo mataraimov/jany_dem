@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <style>
+      body {
+        margin: 0;
+        line-height: normal;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto Serif KR:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+{#  {% for data in data %}#}
+    <div
+      style="
+        position: relative;
+        background-color: #fff;
+        width: 100%;
+        height: 1864px;
+        overflow: hidden;
+        text-align: left;
+        font-size: 33.16px;
+        color: #000;
+        font-family: Montserrat;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          top: 18px;
+          left: 160px;
+          width: 1280px;
+          height: 27.95px;
+          font-size: 15px;
+        "
+      >
+        <div
+          style="position: absolute; top: 1px; left: 1177px; font-weight: 500"
+        >
+          Login/Sign-in
+        </div>
+        <div
+          style="position: absolute; top: 1px; left: 775px; font-weight: 500"
+        >
+          Пожертвовать
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 1px;
+            left: 407px;
+            width: 80px;
+            height: 26px;
+          "
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; font-weight: 500"
+          >
+            Просмотр
+          </div>
+          <img
+            style="
+              position: absolute;
+              top: 24.69px;
+              left: 0px;
+              width: 80px;
+              height: 2.61px;
+            "
+            alt=""
+            src="public/vector-1.svg"
+          />
+        </div>
+        <img
+        style="
+          position: absolute;
+          top: 2px;
+          left: -20px;
+          width: 28px;
+          height: 27.95px;
+          {#object-fit: cover;#}
+        "
+        alt=""
+        src="https://d1xzdqg8s8ggsr.cloudfront.net/63f9dca35a6fc74b8b7e8ab8/3e0dbb89-ae7b-496d-a011-a612398f92be_1677319413968012536?Expires=-62135596800&Signature=vvVWkgwW8U58Uu3rjtzywAnj~InwxZCqxPpkkWYvzyYthvI7OTzNmrehGiYKJKTN81t7fGNDpEuT7Wbu-thKm-OHVDuIIkN4O2hjgT1HM-zKQdVz83p9QfLnXD5NOgSeR7KxtqGWdtC~dGF4qRWjQ9uADcVIossunmMZ5WVp4APFmfZpAvy8kvpCbh2QkRsQjwdy558bf38-lmL0zeulQG9A4RKz5CoRmYuNaj-DIrC9OklNpZqS0GANtz8giCS6wmSyC2XoAQiYvLY7VKIU~SOsT6Fy8w5dm9A~pKViEMahMnUuWZE2IBzxQ3Xbe3zBEXQOJ2eaMPfI35JljPKuqQ__&Key-Pair-Id=K1P54FZWCHCL6J"
+      />
+        <div style="position: absolute; top: 5px; left: 16px; font-weight: 500">
+
+          <a style="
+          color: #000;
+          text-decoration: none;
+        " href="/">Жаңы дем</a>
+        </div>
+      </div>
+      <img
+        style="
+          position: absolute;
+          top: 155px;
+          left: 270px;
+          width: 590px;
+          height: 590px;
+          object-fit: cover;
+        "
+        alt=""
+        src={{ data.photo }}
+      />
+      <div
+        style="
+          position: absolute;
+          top: 155px;
+          left: 935px;
+          width: 371px;
+          height: 311.34px;
+          font-size: 15.27px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: 142.81px;
+            left: 0px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.71);
+          "
+        >
+          Диагноз:
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 85.5px;
+            left: 0px;
+            font-size: 30.35px;
+            font-weight: 500;
+          "
+        >
+          {{ data.age }}
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 43.25px;
+            font-weight: 600;
+            display: inline-block;
+            width: 371px;
+          "
+        >
+          {{ data.username }}
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 165.36px;
+            left: 0px;
+            font-size: 30.34px;
+            font-weight: 500;
+            display: inline-block;
+            width: 310.04px;
+          "
+        >
+          {{ data.diagnose }}
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 274.34px;
+            left: 0px;
+            font-size: 30.34px;
+            font-weight: 500;
+            display: inline-block;
+            width: 310.04px;
+          "
+        >
+          {{ data.treatment }}
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 251.79px;
+            left: 0px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.65);
+          "
+        >
+          Лечение:
+        </div>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 487px;
+          left: 935px;
+          width: 258px;
+          height: 258px;
+          font-size: 16.74px;
+          color: #fff;
+        "
+      >
+        <img
+          style="
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 258px;
+            height: 258px;
+          "
+          alt=""
+          src="https://d1xzdqg8s8ggsr.cloudfront.net/63f9dca35a6fc74b8b7e8ab8/c02a8f53-cf64-448e-945a-e92fb5840013_1677403469233214589?Expires=-62135596800&Signature=Og9ruhMfgbzs-CVXn8xBc5TKIlNgmFFJRAR79oVSKSOrLCtVqCQ~WD6UqLKwY9yxFK7gRe7hXxntGAIX39tOBcjHgLEuY7rCmS0TQ2Gek9rguP8YG9bzfL0H0ouq6DNaM84qxhznh-TJ6J6~1x4Zr2QKzMQIGV9WqmdRsBNACRsQAH9BjmEJLSaFD4hK-JiKYRTX-rWARegee48-ixvHDWAVcEvcMvXQ-g5inSszvNB5o6Hug24eCmT8ccy0DFkMFP1IqRYwAlL6KHocJeVpXush0fjjulVsfH8~edt~UoWhl4IXTBprRylPh5UejFv4P7WVUbi~~fBDI1VL7PSYbg__&Key-Pair-Id=K1P54FZWCHCL6J"
+        />
+        <div
+          style="
+            position: absolute;
+            top: 70.17px;
+            left: 65.85px;
+            font-weight: 500;
+          "
+        >
+          Всего собрано
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 98.23px;
+            left: 50.74px;
+            font-size: 48.36px;
+            font-weight: 600;
+            color: #00ffa3;
+          "
+        >
+          {{ data.balance }}
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 181.36px;
+            left: 84.2px;
+            font-size: 25.72px;
+            font-weight: 500;
+          "
+        >
+          {{ data.target }}
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 153.29px;
+            left: 119.82px;
+            font-size: 19.04px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.96);
+          "
+        >
+          из
+        </div>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 900px;
+          left: 0px;
+          background-color: #fff;
+          width: 1600px;
+          height: 739px;
+        "
+      ></div>
+      <img
+        style="
+          position: absolute;
+          top: 756px;
+          left: 513px;
+          width: 22.04px;
+          height: 22.04px;
+        "
+        alt=""
+        src="https://d1xzdqg8s8ggsr.cloudfront.net/63f9dca35a6fc74b8b7e8ab8/8f2b08f2-e143-428a-867e-6b0dc80dc132_1677399391138039690?Expires=-62135596800&Signature=hAAlSvKU1Go5arjIWjXUXsPcZndeKFmQgSPrfMNBe-jl1UPJBqQrp1U9KwG74hwJEa4AfsoKIePAxocBk3qCtQIIhROn~b4~CfTRQxyiRK81ygydRz-j3UgZi4WX67SrLQDB06fi0bipEEqu1i8XNSIoKV-L-b9iy-c2vTMNygYwYIEildT1PLMpUDM-~eFkgL1kOLOa~5e5H~e~nzcFDAcd3MN1sMAk7JMh99U~Js-TOn67BteYEHTecOFxm82BkQWDQDIk3bmhB84l7ko70KRaZ97HzExrWHpFal6iEWzRgDKtow0ssVJZ09V9oxR9s4vYA0swapu61sm2fofjiw__&Key-Pair-Id=K1P54FZWCHCL6J"
+      /><img
+        style="
+          position: absolute;
+          top: 756px;
+          left: 595.48px;
+          width: 22.04px;
+          height: 22.04px;
+        "
+        alt=""
+        src="https://d1xzdqg8s8ggsr.cloudfront.net/63f9dca35a6fc74b8b7e8ab8/8f2b08f2-e143-428a-867e-6b0dc80dc132_1677399391138039690?Expires=-62135596800&Signature=hAAlSvKU1Go5arjIWjXUXsPcZndeKFmQgSPrfMNBe-jl1UPJBqQrp1U9KwG74hwJEa4AfsoKIePAxocBk3qCtQIIhROn~b4~CfTRQxyiRK81ygydRz-j3UgZi4WX67SrLQDB06fi0bipEEqu1i8XNSIoKV-L-b9iy-c2vTMNygYwYIEildT1PLMpUDM-~eFkgL1kOLOa~5e5H~e~nzcFDAcd3MN1sMAk7JMh99U~Js-TOn67BteYEHTecOFxm82BkQWDQDIk3bmhB84l7ko70KRaZ97HzExrWHpFal6iEWzRgDKtow0ssVJZ09V9oxR9s4vYA0swapu61sm2fofjiw__&Key-Pair-Id=K1P54FZWCHCL6J"
+      /><img
+        style="
+          position: absolute;
+          top: 756px;
+          left: 554.24px;
+          width: 22.04px;
+          height: 22.04px;
+        "
+        alt=""
+        src="https://d1xzdqg8s8ggsr.cloudfront.net/63f9dca35a6fc74b8b7e8ab8/c02a8f53-cf64-448e-945a-e92fb5840013_1677403469233214589?Expires=-62135596800&Signature=Og9ruhMfgbzs-CVXn8xBc5TKIlNgmFFJRAR79oVSKSOrLCtVqCQ~WD6UqLKwY9yxFK7gRe7hXxntGAIX39tOBcjHgLEuY7rCmS0TQ2Gek9rguP8YG9bzfL0H0ouq6DNaM84qxhznh-TJ6J6~1x4Zr2QKzMQIGV9WqmdRsBNACRsQAH9BjmEJLSaFD4hK-JiKYRTX-rWARegee48-ixvHDWAVcEvcMvXQ-g5inSszvNB5o6Hug24eCmT8ccy0DFkMFP1IqRYwAlL6KHocJeVpXush0fjjulVsfH8~edt~UoWhl4IXTBprRylPh5UejFv4P7WVUbi~~fBDI1VL7PSYbg__&Key-Pair-Id=K1P54FZWCHCL6J"
+      />
+      <div
+        style="
+          position: absolute;
+          top: 795px;
+          left: 579px;
+          font-size: 44.8px;
+          font-weight: 600;
+        "
+      >
+        Путь к исцелению
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 932px;
+          left: 160px;
+          font-weight: 500;
+          display: inline-block;
+          width: 1280px;
+        "
+      >
+
+        <p style="margin-block-start: 0; margin-block-end: 0px">
+          {{ data.description }}
+        </p>
+
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 1696px;
+          left: 521px;
+          border-radius: 16px;
+          background-color: #7bb0ff;
+          width: 558px;
+          height: 100px;
+        "
+      ></div>
+      <a href='pay'
+        style="
+          position: absolute;
+          top: 1726px;
+          left: 732px;
+          font-weight: 600;
+          color: #fff;
+          cursor: pointer;
+          text-decoration: none;
+        "
+      >
+        Помочь
+      </a>
+    </div>
+{#  {% endfor %}#}
+  </body>
+</html>

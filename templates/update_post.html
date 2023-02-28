@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="background: darkslategray">
+     <h1>Update Post</h1>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input name="username" placeholder="username" type="text">
+    <input name="age" placeholder="age" type="text">
+    <input name="diagnose" placeholder="diagnose" type="text">
+    <input name="treatment" placeholder="treatment" type="text">
+    <input name="target" placeholder="target" type="text">
+    <input name="photo" placeholder="photo" type="text">
+    <input name="description" placeholder="description" type="text">
+    <input name="balance" placeholder="balance" type="text">
+
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

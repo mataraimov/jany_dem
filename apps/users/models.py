@@ -7,19 +7,18 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Post(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
-    questionnaire=models.CharField(max_length=255,null=True,blank=True)
-    evidence=models.CharField(max_length=255,null=True,blank=True)
-    copy=models.CharField(max_length=255,null=True,blank=True)
-    excerpt=models.CharField(max_length=255,null=True,blank=True)
-    reference=models.CharField(max_length=255,null=True,blank=True)
-    program=models.CharField(max_length=255,null=True,blank=True)
+    username=models.CharField(max_length=255,null=True,blank=True)
+    age=models.CharField(max_length=255,null=True,blank=True)
+    diagnose=models.CharField(max_length=255,null=True,blank=True)
+    treatment=models.CharField(max_length=255,null=True,blank=True)
+    target=models.IntegerField(null=True,blank=True)
     photo=models.CharField(max_length=255,null=True,blank=True)
-    position=models.CharField(max_length=255,null=True,blank=True)
-    position_copy=models.CharField(max_length=255,null=True,blank=True)
-    call=models.CharField(max_length=255,null=True,blank=True)
-    appeals=models.CharField(max_length=255,null=True,blank=True)
-    checks=models.CharField(max_length=255,null=True,blank=True)
+    description=models.TextField(default='no description')
     balance=models.IntegerField(null=True,blank=True)
 
     def __repr__(self):
-        return self.title
+        return self.user
+
+    def update_balance(self, amount):
+        self.balance += amount
+        self.save()

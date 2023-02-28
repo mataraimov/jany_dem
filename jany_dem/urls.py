@@ -22,7 +22,7 @@ from apps.users.views import MainView, user_logout, LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/post/', include('apps.users.urls')),
+    path('api/', include('apps.users.urls')),
     path('',MainView.as_view(),name='home'),
     path('login', LoginView.as_view(), name='login'),
     path('logout', user_logout, name='logout'),
