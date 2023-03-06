@@ -1,5 +1,6 @@
 import stripe
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Q
 from django.shortcuts import redirect, get_object_or_404, render
 from django.views.generic import TemplateView
@@ -7,7 +8,6 @@ from django.contrib.auth.views import LoginView
 from rest_framework.response import Response
 from django_filters import rest_framework as filterss
 from rest_framework.reverse import reverse
-
 from jany_dem import settings
 from .forms import PostForm
 from .permissions import IsOwnerOrReadOnly
@@ -85,9 +85,18 @@ class PostViewSet(
 
     def retrieve(self, request, pk=None):
         queryset = Post.objects.all()
-        user = get_object_or_404(queryset, pk=pk)
-        serializer = PostSerializer(user)
-        return Response({'data': serializer.data}, template_name='profile.html')
+        post = get_object_or_404(queryset, pk=pk)
+        user = post.user
+        serializer = PostSerializer(post)
+        return Response({
+            'data': serializer.data,
+            'user': {
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                # Другие поля пользователя, которые вам нужны
+            }
+        }, template_name='profile.html')
 
     @action(detail=True, methods=['post'], name='Update Post')
     def update_post(self, request, *args, **kwargs):
@@ -125,3 +134,15 @@ class MainView(TemplateView):
     template_name = "home.html"
 class LoginView(LoginView):
     template_name = "login.html"
+
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})

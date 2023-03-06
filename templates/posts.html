@@ -309,7 +309,36 @@
     <div class="rectangle-root">
       <div class="frame-child18"></div>
       <div class="loginsign-in-group">
-        <div class="loginsign-in2">Login/Sign-in</div>
+        <div
+        style="position: absolute; top: 19px; right: 220px; font-weight: 500"
+      >
+        {% if user.is_authenticated %}
+
+            <a style="
+          color: #000;
+          text-decoration: none;
+        " href="{% url 'logout' %}">Log Out</a>
+            <a style="
+          color: #000;
+          margin-left: 10px;
+          text-decoration: none;
+        " href="{% url 'chat_list' %}">Chat</a>
+        {% else %}
+
+            <a style="
+          color: #000;
+          text-decoration: none;
+        " href="{% url 'login' %}">Log In</a>
+        {% endif %}
+      </div>
+        <div
+        style="position: absolute; top: 19px; right: 100px; font-weight: 500"
+      ><a style="
+          color: #000;
+          text-decoration: none;
+        " href="{% url 'register' %}">Sign-in</a>
+
+      </div>
         <div class="div58">Пожертвовать</div>
         <div class="parent4">
           <div class="div59">Просмотр</div>

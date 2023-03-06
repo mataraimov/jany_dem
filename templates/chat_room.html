@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .message {
+            margin-bottom: 10px;
+        }
+        .sent {
+            background-color: #DCF8C6;
+            border-radius: 10px;
+            padding: 10px;
+            float: right;
+            clear: both;
+            max-width: 50%;
+        }
+        .received {
+            background-color: #EAEAEA;
+            border-radius: 10px;
+            padding: 10px;
+            float: left;
+            clear: both;
+            max-width: 50%;
+        }
+        .meta {
+            color: #999;
+            font-size: 0.8em;
+        }
+        .chat-form {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .chat-input {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    .chat-btn {
+        min-width: 100px;
+    }
+    </style>
+    <script>
+        const room_name = {{ recipient_username }};
+        const ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        const ws_path = ws_scheme + '://' + window.location.host + '{{ ws_server_path }}';
+        const chatSocket = new WebSocket(ws_path);
+        console.log({{ recipent_username }})
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const message = data['message'];
+            const sender = data['sender'];
+            const sent_at = data['sent_at'];
+            const messageElem = document.createElement('div');
+            messageElem.innerHTML = '<p>' + sender + ': ' + message + '</p><p>' + sent_at + '</p>';
+            document.querySelector('#chat').appendChild(messageElem);
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+          document.querySelector('#chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messageInputDom = document.querySelector('#id_content');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message,
+                'room_name': room_name
+            }));
+            messageInputDom.value = '';
+        });
+        });
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Chat Room?</h1>
+        <h2 class="mb-4">Conversation with {{ recipient_username }}</h2>
+        <div id="chat" class="mb-4">
+            {% for message in messages %}
+                {% if message.sender == request.user %}
+                    <div class="message sent">
+                        <p>{{ message.message }}</p>
+                        <span class="meta">{{ message.timestamp|date:"F j, Y, g:i a" }}</span>
+                    </div>
+                {% else %}
+                    <div class="message received">
+                        <p>{{ message.message }}</p>
+                        <span class="meta">{{ message.timestamp|date:"F j, Y, g:i a" }}</span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+
+        <form id="chat-form" class="chat-form" method="post" action="{% url 'send_message' recipient_username %}">
+            {% csrf_token %}
+            <input id="id_content" class="chat-input" type="text" name="message" placeholder="Type your message here...">
+            <button class="btn btn-primary chat-btn" type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Optional Bootstrap JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-8SfW1QvEdEgO2XH/t9W0vrWvZvMkvoS/+sTuT4SLa8aFyVNPpG9fXnjVXaDZvJ+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+</body>
+</html>

@@ -63,7 +63,11 @@
             <a style="
           color: #000;
           text-decoration: none;
-        " href="{% url 'logout' %}">Log Out</a>
+        " href="{% url 'logout' %}">Log Out</a><a style="
+          color: #000;
+          margin-left: 10px;
+          text-decoration: none;
+        " href="{% url 'chat_list' %}">Chat</a>
         {% else %}
 
             <a style="
@@ -77,7 +81,7 @@
       ><a style="
           color: #000;
           text-decoration: none;
-        " href="https://typebot.io/my-typebot-tqf8bpl">Sign-in</a>
+        " href="{% url 'register' %}">Sign-in</a>
 
       </div>
       <div style="position: absolute; top: 19px; left: 935px; font-weight: 500">

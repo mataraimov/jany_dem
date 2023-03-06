@@ -1,0 +1,63 @@
+{% load custom_tags %}
+{% load chat_filters %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .chat {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      .chat .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .chat .date {
+        font-size: 12px;
+        color: #999;
+        margin-bottom: 5px;
+      }
+      .chat .preview {
+        font-size: 14px;
+        color: #333;
+      }
+      .chat .link {
+        color: #333;
+        text-decoration: none;
+      }
+      .chat .link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chat List</h1>
+
+    {% if chat_list %}
+
+      {% for chat in chat_list %}
+        <div class="chat">
+          <div class="title">{{ chat|other_user_username:request.user }}</div>
+          <div class="date">{{ chat.last_message.sent_at }}</div>
+          <div class="preview">{{ chat.last_message.content }}</div>
+          {% if chat|other_user:request.user %}
+              <a class="link" href="{% url 'chat_room' chat|other_user_username:request.user  %}">Go to chat</a>
+            {% else %}
+              <span>No recipient found</span>
+            {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No chats yet.</p>
+    {% endif %}
+  </body>
+</html>

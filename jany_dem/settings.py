@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'apps.users',
+    'apps.chat',
     'django_filters',
     'widget_tweaks',
 ]
@@ -83,7 +84,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'jany_dem.wsgi.application'
+ASGI_APPLICATION = 'myproject.routing.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('localhost', 6379)],
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
