@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9c64b11-aec2-4bf4-be68-3ac2327da739" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jany_dem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jany_dem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/migrations/0002_post_description.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/migrations/0003_alter_post_description.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/migrations/0004_alter_post_description.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jany_dem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jany_dem/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jany_dem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jany_dem/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +111,7 @@
       <workItem from="1677689455433" duration="88000" />
       <workItem from="1678019931301" duration="12902000" />
       <workItem from="1678035614426" duration="964000" />
-      <workItem from="1678036681923" duration="17593000" />
+      <workItem from="1678036681923" duration="18614000" />
     </task>
     <servers />
   </component>
