@@ -1,5 +1,6 @@
 version: '3.7'
-
+environment:
+  - "POSTGRES_HOST_AUTH_METHOD=trust"
 services:
   db:
     image: postgres:12.0-alpine
